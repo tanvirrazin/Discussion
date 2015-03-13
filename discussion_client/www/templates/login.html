@@ -1,0 +1,22 @@
+<ion-view view-title="Login">
+	<ion-content class="padding">
+		<div class="list">
+			<img src="img/logo.png" class="logo">
+			<div class="logoText">
+				Discussion
+			</div>
+		</div>
+		<div class="list card-padding">
+			<label class="item item-input">
+				<input type="text" data-ng-model="user.username" placeholder="Username" />
+			</label>
+			<label class="item item-input">
+				<input type="password" data-ng-model="user.password" placeholder="Password" />
+			</label>
+			<button class="button button-block button-positive activated" data-ng-click="login()">
+				Login
+			</button>
+		</div>
+		<div></div>
+	</ion-content>
+</ion-view>
