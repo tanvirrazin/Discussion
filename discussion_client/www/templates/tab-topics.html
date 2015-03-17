@@ -1,0 +1,40 @@
+<ion-view view-title="Topics">
+  <ion-content class="padding">
+    
+    <div class="list card" ng-repeat="topic in data.topics">
+
+      <div class="item item-avatar">
+        <img src="img/face.jpg">
+        <h2>{{topic.creator }}</h2>
+        <p>November 05, 1955</p>
+      </div>
+
+      <div class="item item-body">
+        <!-- <img class="full-image" src="delorean.jpg"> -->
+        <p>
+          {{ topic.body }}
+        </p>
+        <p>
+          <a href="#" class="subdued">{{ topic.likes_count }} Like</a>
+          <a href="#" class="subdued">{{ topic.comments_count }} Comments</a>
+        </p>
+      </div>
+
+      <div class="item tabs tabs-secondary tabs-icon-left">
+        <a class="tab-item" href="#">
+          <i class="icon ion-thumbsup"></i>
+          Like
+        </a>
+        <a class="tab-item" href="#">
+          <i class="icon ion-chatbox"></i>
+          Comment
+        </a>
+        <a class="tab-item" href="#">
+          <i class="icon ion-share"></i>
+          Share
+        </a>
+      </div>
+
+    </div>
+  </ion-content>
+</ion-view>

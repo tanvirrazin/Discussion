@@ -19,7 +19,7 @@ var DiscussApp = angular.module('DiscussApp', ['ionic', 'starter.controllers', '
       StatusBar.styleDefault();
     }
 
-    $state.go('tab.account');
+    $state.go('login');
   });
 })
 
@@ -52,12 +52,12 @@ var DiscussApp = angular.module('DiscussApp', ['ionic', 'starter.controllers', '
 
   // Each tab has its own nav history stack:
 
-  .state('tab.dash', {
-    url: '/dash',
+  .state('tab.topics', {
+    url: '/topics',
     views: {
-      'tab-dash': {
-        templateUrl: 'templates/tab-dash.html',
-        controller: 'DashCtrl'
+      'tab-topics': {
+        templateUrl: 'templates/tab-topics.html',
+        controller: 'TopicsCtrl'
       }
     }
   })

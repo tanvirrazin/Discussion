@@ -9,4 +9,6 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^api/auth/login/', 'rest_framework_jwt.views.obtain_jwt_token'),
     url(r'^api/', include('api.urls')),
+    url(r'^api/', include('topics.urls')),
+    url(r'^api/', include('contacts.urls')),
 )

@@ -3,6 +3,7 @@ DiscussApp.factory('AuthService', ['Resources', '$http', function(Resources, $ht
 	var session;
 	var service = {
 		token: '',
+		current_user: {},
 		login: function(credentials, callback){
 			$http({
 				method: 'POST',
@@ -58,6 +59,18 @@ DiscussApp.factory('AuthService', ['Resources', '$http', function(Resources, $ht
 			// 	initializeSession(function(session_data){
 			// 		return session_data;
 			// 	});
+		},
+		getUserProfile: function(){
+			var promise = $http({
+				method: 'GET',
+				url: Resources.SERVER_DOMAIN + '/api/user-profile/',
+			})
+			.then(function(response){
+				this.current_user = response.data;
+			},function(){
+
+			});
+			return promise;
 		}
 	};
 

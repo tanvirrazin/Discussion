@@ -1,6 +1,8 @@
 from django.contrib.auth.models import User
 from rest_framework import serializers
 
+from contacts.models import UserProfile
+
 
 class SignupSerializer(serializers.Serializer):
 	username = serializers.CharField(max_length=20)
@@ -14,3 +16,7 @@ class SignupSerializer(serializers.Serializer):
 class UserSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = User
+
+class UserProfileSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = UserProfile

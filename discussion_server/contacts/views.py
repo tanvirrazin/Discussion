@@ -4,7 +4,8 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import status, generics
 
-from contacts.serializers import SignupSerializer, UserSerializer
+from contacts.models import UserProfile
+from contacts.serializers import SignupSerializer, UserSerializer, UserProfileSerializer
 
 
 class SignupView(APIView):
@@ -25,3 +26,11 @@ class SignupView(APIView):
 class UserListCreateAPIView(generics.ListCreateAPIView):
 	queryset = User.objects.all()
 	serializer_class = UserSerializer
+
+
+class UserProfileRetrieveAPIView(generics.RetrieveAPIView):
+	serializer_class = UserProfileSerializer
+
+	def get_object(self):
+		return UserProfile.objects.get(user=self.request.user)
+
