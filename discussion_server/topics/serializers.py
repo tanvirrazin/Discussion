@@ -8,3 +8,8 @@ class TopicSerializer(serializers.ModelSerializer):
 	creator = serializers.CharField(source='get_creator')
 	class Meta:
 		model = Topic
+
+
+class TopicLikeDislikeSerializer(serializers.Serializer):
+
+	like = serializers.BooleanField()

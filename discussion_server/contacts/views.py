@@ -4,8 +4,8 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import status, generics
 
-from contacts.models import UserProfile
-from contacts.serializers import SignupSerializer, UserSerializer, UserProfileSerializer
+from models import UserProfile
+from serializers import SignupSerializer, UserSerializer, UserProfileSerializer
 
 
 class SignupView(APIView):
